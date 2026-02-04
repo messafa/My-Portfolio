@@ -7,13 +7,14 @@ import FavIconProvider from 'components/Misc/FavIconProvider'
 
 function KLSite({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <AnimatePresence exitBeforeEnter>
-      <ChakraProvider theme={theme}>
-        <FavIconProvider>
+    <ChakraProvider theme={theme}>
+      <FavIconProvider>
+        <AnimatePresence mode="wait">
           <Component {...pageProps} />
-        </FavIconProvider>
-      </ChakraProvider>
-    </AnimatePresence>
+        </AnimatePresence>
+      </FavIconProvider>
+    </ChakraProvider>
   )
 }
+
 export default KLSite
